@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:31:38 by asalo             #+#    #+#             */
-/*   Updated: 2023/12/20 22:07:16 by asalo            ###   ########.fr       */
+/*   Updated: 2023/12/22 16:43:53 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int	ft_print_char(int c);
 int	ft_print_str(char *s);
-int	ft_print_n(long long int n, char *base);
+int	ft_print_dg(long long int n, char *base);
 int	ft_print_uint(unsigned long n, char *base);
 int	ft_print_ptr(size_t ptr);
 int	ft_printf(const char *str, ...);

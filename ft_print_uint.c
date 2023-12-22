@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 21:30:11 by asalo             #+#    #+#             */
-/*   Updated: 2023/12/20 22:07:07 by asalo            ###   ########.fr       */
+/*   Updated: 2023/12/22 16:48:17 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_print_uint(unsigned long n, char *base)
 		return (ft_print_char(base[n]));
 	else
 	{
-		count = ft_print_n(n / base_len, base);
-		return (count + ft_print_n(n % base_len, base));
+		count = ft_print_dg(n / base_len, base);
+		return (count + ft_print_dg(n % base_len, base));
 	}
 }

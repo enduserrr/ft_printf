@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:24:57 by asalo             #+#    #+#             */
-/*   Updated: 2023/12/20 22:07:31 by asalo            ###   ########.fr       */
+/*   Updated: 2023/12/22 16:50:19 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ static int	ft_find_format(char type, va_list ap, int temp)
 	else if (type == 'p')
 		temp = ft_print_ptr(va_arg(ap, unsigned long));
 	else if (type == 'd' || type == 'i')
-		temp = ft_print_n((long) va_arg(ap, int), "0123456789");
+		temp = ft_print_dg((long) va_arg(ap, int), "0123456789");
 	else if (type == 'u')
-		temp = ft_print_n((long) va_arg(ap, unsigned int), "0123456789");
+		temp = ft_print_dg((long) va_arg(ap, unsigned int), "0123456789");
 	else if (type == 'x')
-		temp = ft_print_n((long) va_arg(ap, unsigned int), "0123456789abcdef");
+		temp = ft_print_dg((long) va_arg(ap, unsigned int), "0123456789abcdef");
 	else if (type == 'X')
-		temp = ft_print_n((long) va_arg(ap, unsigned int), "0123456789ABCDEF");
+		temp = ft_print_dg((long) va_arg(ap, unsigned int), "0123456789ABCDEF");
 	else
 		temp = write(1, &type, 1);
 	if (temp == -1)
