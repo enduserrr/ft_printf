@@ -6,7 +6,7 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:31:38 by asalo             #+#    #+#             */
-/*   Updated: 2023/12/22 16:43:53 by asalo            ###   ########.fr       */
+/*   Updated: 2023/12/24 16:41:06 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
+# include <stddef.h>
 
 int	ft_print_char(int c);
 int	ft_print_str(char *s);
 int	ft_print_dg(long long int n, char *base);
 int	ft_print_uint(unsigned long n, char *base);
 int	ft_print_ptr(size_t ptr);
-int	ft_printf(const char *str, ...);
+int	ft_find_format(char type, va_list ap, int temp);
+int	ft_printf(const char *format, ...);
 
 #endif

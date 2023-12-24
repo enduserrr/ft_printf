@@ -6,13 +6,13 @@
 /*   By: asalo <asalo@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 12:24:57 by asalo             #+#    #+#             */
-/*   Updated: 2023/12/22 16:50:19 by asalo            ###   ########.fr       */
+/*   Updated: 2023/12/24 16:40:52 by asalo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_find_format(char type, va_list ap, int temp)
+int	ft_find_format(char type, va_list ap, int temp)
 {
 	int	count;
 
@@ -41,29 +41,29 @@ static int	ft_find_format(char type, va_list ap, int temp)
 	return (count += temp);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		count;
 	int		temp;
 	int		temp2;
 
-	va_start(ap, str);
+	va_start(ap, format);
 	count = 0;
-	while (*str)
+	while (*format)
 	{
 		temp = 0;
 		temp2 = 0;
-		if (*str == '%')
-			temp = ft_find_format(*(++str), ap, temp);
+		if (*format == '%')
+			temp = ft_find_format(*(++format), ap, temp);
 		else
-			temp2 = write(1, str, 1);
+			temp2 = write(1, format, 1);
 		if (temp == -1 || temp2 == -1)
 		{
 			count = -1;
 			break ;
 		}
-		str++;
+		format++;
 		count += temp + temp2;
 	}
 	va_end(ap);
